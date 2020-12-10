@@ -199,7 +199,7 @@ public class activity_pedido2 extends AppCompatActivity {
         System.out.println(" - partner: " +  pedido.getPartner().getCIF() + " " +  pedido.getPartner().getNombre() + " | " +  pedido.getPartner().getEmail() + " | " +  pedido.getPartner().getPoblacion() + " | " +  pedido.getPartner().getTelefono());
         System.out.println(" - lineas: ");
         for (int i=0; i < pedido.getLineas().size(); i++){
-            System.out.println("    * " + pedido.getLineas().get(i).getProducto().getCod() + " " + pedido.getLineas().get(i).getProducto().getNombre() + " | "  + pedido.getLineas().get(i).getCantidad() + " | "  + pedido.getLineas().get(i).getPr_total());
+            System.out.println("    * " + pedido.getLinea(i).getProducto().getCod() + " " + pedido.getLinea(i).getProducto().getNombre() + " | "  + pedido.getLinea(i).getCantidad() + " | "  + pedido.getLinea(i).getPr_total());
         }
     }
 }
