@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">RetoComerciales</string>
 
+    <string name="lbl_nomEmpresa">Pistacho</string>
+
+    <!-- presentación -->
+
+    <string name="btn_iniciar">Iniciar</string>
+
+
     <!-- pedido2 -->
     <string name="lbl_Titulo">Realizar pedido</string>
     <string name="lbl_nomProd">Artículo:</string>
