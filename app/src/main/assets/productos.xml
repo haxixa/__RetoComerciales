@@ -1,0 +1,98 @@
+<catalogo>
+	<producto>
+		<articuloID>PPB</articuloID>
+		<nombre>PistachoB</nombre>
+		<descripcion></descripcion>
+		<imagen>movil</imagen>
+		<precio>79,95</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>PPA</articuloID>
+		<nombre>PistachoA</nombre>
+		<descripcion></descripcion>
+		<imagen>movil</imagen>
+		<precio>125.95</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>PPA+</articuloID>
+		<nombre>PistachoA+</nombre>
+		<descripcion></descripcion>
+		<imagen>movil</imagen>
+		<precio>153.45</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>PPO</articuloID>
+		<nombre>PistachoO</nombre>
+		<descripcion></descripcion>
+		<imagen>movil</imagen>
+		<precio>279.95</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>PPO+</articuloID>
+		<nombre>PistachoO+</nombre>
+		<descripcion></descripcion>
+		<imagen>movil</imagen>
+		<precio>293.45</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>PPod</articuloID>
+		<nombre>PistachoPods</nombre>
+		<descripcion></descripcion>
+		<imagen>airpodsPistacho</imagen>
+		<precio>24.95f</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>Carg</articuloID>
+		<nombre>Cargador Pistacho</nombre>
+		<descripcion></descripcion>
+		<imagen>cargadorPistacho</imagen>
+		<precio>12.34</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>FPB</articuloID>
+		<nombre>Funda PistachoB</nombre>
+		<descripcion></descripcion>
+		<imagen>fundaPistacho</imagen>
+		<precio>7</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>FPA</articuloID>
+		<nombre>Funda PistachoA</nombre>
+		<descripcion></descripcion>
+		<imagen>fundaPistacho</imagen>
+		<precio>7</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>FPA+</articuloID>
+		<nombre>Funda PistachoA+</nombre>
+		<descripcion></descripcion>
+		<imagen>fundaPistacho</imagen>
+		<precio>8.54</precio>
+	</producto>	
+	
+	
+	<producto>
+		<articuloID>FPO</articuloID>
+		<nombre>Funda PistachoO</nombre>
+		<descripcion></descripcion>
+		<imagen>fundaPistacho</imagen>
+		<precio>8</precio>
+	</producto>
+	
+	<producto>
+		<articuloID>FPO+</articuloID>
+		<nombre>Funda PistachoO+</nombre>
+		<descripcion></descripcion>
+		<imagen>fundaPistacho</imagen>
+		<precio>9.54</precio>
+	</producto>
+</catalogo>
