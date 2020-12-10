@@ -9,6 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity_envios"></activity>
+        <activity android:name=".activity_calendario" />
+        <activity android:name=".activity_pedido3" />
+        <activity android:name=".activity_pedido2" />
+        <activity android:name=".activity_pedido1" />
+        <activity android:name=".activity_addPartner" />
+        <activity android:name=".activity_gestionPartner" />
+        <activity android:name=".activity_menu" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
