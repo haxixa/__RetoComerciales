@@ -13,24 +13,18 @@ import java.util.ArrayList;
 public class activity_menu extends AppCompatActivity {
 
     Producto[] listaProductos;
-    TextView lista; //para probar
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_menu);
 
-        lista = findViewById(R.id.datosProd);
-
         Intent extras = getIntent();
         listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
 
 
-        lista.setText(texto(listaProductos));
-
     }
 
-    public String texto (Producto[] list){
+    public String texto (Producto[] list){//testeo
         String text = "";
         for(Producto prod : list){
             text = text + prod.getCod() + "|" + prod.getNombre() + "|" + prod.getDescripcion() + "|" + prod.getPr_unidad() +"\n";

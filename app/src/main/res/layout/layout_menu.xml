@@ -29,12 +29,10 @@
             android:id="@+id/imageButton4"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="256dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="40dp"
             android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.069"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/pedidos" />
 
@@ -42,26 +40,20 @@
             android:id="@+id/imageButton2"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="144dp"
             android:scaleType="centerInside"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageButton4"
+            app:layout_constraintTop_toTopOf="@+id/imageButton3"
             app:srcCompat="@drawable/delegaciones" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="144dp"
+            android:layout_marginTop="30dp"
             android:scaleType="centerInside"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-            app:layout_constraintHorizontal_bias="0.436"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton"
+            app:layout_constraintStart_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"
             app:srcCompat="@drawable/partners" />
 
         <ImageButton
@@ -69,10 +61,10 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="40dp"
-            android:layout_marginBottom="28dp"
             android:scaleType="centerInside"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton4"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButton4"
             app:srcCompat="@drawable/calendario" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
