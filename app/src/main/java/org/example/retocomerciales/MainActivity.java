@@ -51,6 +51,6 @@ public class MainActivity extends AppCompatActivity {
     public void lanzarPropuesta (){
         Intent intent = new Intent(MainActivity.this, activity_menu.class);
         intent.putExtra("listaProductos", listaProductos);
-        startActivityForResult(intent, 123);//si no vas devolver dato:  startActivity(intent);
+        startActivity(intent);
     }
 }
