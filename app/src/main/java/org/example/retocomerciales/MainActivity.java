@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         _iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("pito");
+
             }
         });
     }
