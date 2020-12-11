@@ -20,13 +20,12 @@ public class activity_menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_menu);
 
-        lista = findViewById(R.id.datosProd);
+
 
         Intent extras = getIntent();
         listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
 
 
-        lista.setText(texto(listaProductos));
 
     }
 

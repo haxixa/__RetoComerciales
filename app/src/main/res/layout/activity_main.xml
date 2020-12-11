@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="@string/lbl_nomEmpresa"
+        android:textColor="@android:color/background_dark"
         android:textSize="30sp"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,9 +21,11 @@
 
     <ImageView
         android:id="@+id/img_logoPistacho"
-        android:layout_width="130dp"
-        android:layout_height="353dp"
+        android:layout_width="142dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pinguino" />
