@@ -5,6 +5,7 @@ falta la recepción de datos del intent del que se abre y el envio en intent + a
  */
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -29,14 +30,15 @@ public class activity_pedido2 extends AppCompatActivity {
 
 
 
-    ArrayList<Producto> listaProductos;
+    Producto[] listaProductos;
     String[] list;
 
     Spinner sp;
     Pedido pedido;
     EditText prUnidad, descripcion, prTotal, unidades;
     ImageView imagen;
-    Button addToPedido;
+    Button addToPedido, volver;
+    Intent intent, extras;
 
     Producto prod;//producto elegido en el spinner
 
@@ -47,7 +49,17 @@ public class activity_pedido2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_pedido2);
 
-        //datos cargados sin xml
+        volver  = findViewById(R.id.btn_volver);
+        sp = findViewById(R.id.spinner);
+        prUnidad = findViewById(R.id.txt_precioUnidad);
+        descripcion = findViewById(R.id.txt_descripcion);
+        imagen = findViewById(R.id.imagen);
+        prTotal = findViewById(R.id.txt_precioTotal);
+        unidades = findViewById(R.id.txt_cantidades);
+        addToPedido = findViewById(R.id.btn_addToPedido);
+
+
+        /*datos cargados sin xml
         listaProductos = new ArrayList<Producto>();
         listaProductos.add(new Producto("PPB_", "PistachoB", "movil", 79.95f));
         listaProductos.add(new Producto("PPA_", "PistachoA", "movil", 125.95f));
@@ -60,7 +72,9 @@ public class activity_pedido2 extends AppCompatActivity {
         listaProductos.add(new Producto("FPA_", "Funda PistachoA", "fundaPistacho", 7f));
         listaProductos.add(new Producto("FPA+", "Funda PistachoA+", "fundaPistacho", 8.54f));
         listaProductos.add(new Producto("FPO_", "Funda PistachoO", "fundaPistacho", 8f));
-        listaProductos.add(new Producto("FPO+", "Funda PistachoO+", "fundaPistacho", 9.54f));
+        listaProductos.add(new Producto("FPO+", "Funda PistachoO+", "fundaPistacho", 9.54f));*/
+        extras = getIntent();
+        listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
 
         list = listaNomProductos(listaProductos);//new String[]{"PistachoB", "PistachoA", "PistachoA+", "PistachoO", "PistachoO+", "PistachoPods", "Cargador Pistacho", "Funda PistachoB", "Funda PistachoA", "Funda PistachoA+", "Funda PistachoO", "Funda PistachoO+"};
 
@@ -81,13 +95,6 @@ public class activity_pedido2 extends AppCompatActivity {
                 new Comercial("1", "s", "123 12", "Gipuzkoa"));
 
 
-        sp = findViewById(R.id.spinner);
-        prUnidad = findViewById(R.id.txt_precioUnidad);
-        descripcion = findViewById(R.id.txt_descripcion);
-        imagen = findViewById(R.id.imagen);
-        prTotal = findViewById(R.id.txt_precioTotal);
-        unidades = findViewById(R.id.txt_cantidades);
-        addToPedido = findViewById(R.id.btn_addToPedido);
 
         lista.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -98,7 +105,7 @@ public class activity_pedido2 extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                prod = listaProductos.get(position);
+                prod = listaProductos[position];
                 precioUnidad = prod.getPr_unidad();
 
                 prUnidad.setText(String.valueOf(precioUnidad) + "€");
@@ -139,6 +146,13 @@ public class activity_pedido2 extends AppCompatActivity {
                 }
             }
         });
+
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 
@@ -169,11 +183,11 @@ public class activity_pedido2 extends AppCompatActivity {
         }
     }
 
-    public String[] listaNomProductos(ArrayList<Producto> list){
-        String[] nombres = new String[list.size()];
+    public String[] listaNomProductos(Producto[] list){
+        String[] nombres = new String[list.length];
 
-        for(int i = 0; i < list.size(); i++){
-            nombres[i] = list.get(i).getNombre();
+        for(int i = 0; i < list.length; i++){
+            nombres[i] = list[i].getNombre();
         }
         return nombres;
     }

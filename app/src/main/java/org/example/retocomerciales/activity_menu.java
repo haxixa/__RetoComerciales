@@ -14,7 +14,7 @@ public class activity_menu extends AppCompatActivity {
 
     ImageButton img_calendario, img_pedidos, img_delegaciones, img_partners;
     Button volver;
-    Intent intent;
+    Intent intent, extras;
     Producto[] listaProductos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class activity_menu extends AppCompatActivity {
         img_partners = findViewById(R.id.img_gestionPartners);
         volver = findViewById(R.id.btn_volver);
 
-        Intent extras = getIntent();
+        extras = getIntent();
         listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
 
 
@@ -52,6 +52,7 @@ public class activity_menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(activity_menu.this, activity_pedido1.class);
+                intent.putExtra("listaProductos", listaProductos);
                 startActivity(intent);
             }
         });

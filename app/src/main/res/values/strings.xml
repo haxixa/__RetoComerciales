@@ -3,6 +3,7 @@
 
     <string name="lbl_nomEmpresa">Pistacho</string>
     <string name="btn_volver">Volver</string>
+    <string name="btn_siguiente">Siguiente</string>
 
     <!-- presentación -->
 
@@ -13,6 +14,7 @@
     <string name="txt_gestionPedido">Gestión de pedidos</string>
     <string name="txt_gestionPartners">Gestión de partners</string>
     <string name="txt_envioDelegacion">Envios a la Delegación</string>
+
 
     <!-- pedido2 -->
     <string name="lbl_anadirArticulos">Añadir artículos</string>
