@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.example.retocomerciales.Clases.Producto;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 
 public class activity_menu extends AppCompatActivity {
 
+    ImageButton 
     Producto[] listaProductos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +27,11 @@ public class activity_menu extends AppCompatActivity {
 
     }
 
-    public String texto (Producto[] list){//testeo
+    /*public String texto (Producto[] list){//testeo
         String text = "";
         for(Producto prod : list){
             text = text + prod.getCod() + "|" + prod.getNombre() + "|" + prod.getDescripcion() + "|" + prod.getPr_unidad() +"\n";
         }
         return  text;
-    }
+    }*/
 }
