@@ -5,12 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_pedido2">
+
+    <ImageView
+        android:id="@+id/img_logoPistacho8"
+        android:layout_width="52dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pinguino" />
+
     <TextView
-        android:id="@+id/lbl_Titulo2"
+        android:id="@+id/lbl_nomEmpresa7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="@string/lbl_Titulo"
+        android:layout_marginEnd="10dp"
+        android:text="@string/lbl_nomEmpresa"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_logoPistacho8"
+        app:layout_constraintEnd_toStartOf="@+id/img_logoPistacho8"
+        app:layout_constraintTop_toTopOf="@+id/img_logoPistacho8" />
+
+    <TextView
+        android:id="@+id/lbl_anadirArticulos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/lbl_anadirArticulos"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +47,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_Titulo2" />
+        app:layout_constraintTop_toBottomOf="@+id/lbl_anadirArticulos" />
 
     <TextView
         android:id="@+id/lbl_prUnidad"
@@ -90,10 +113,10 @@
         android:layout_width="132dp"
         android:layout_height="130dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:background="#717171"
         app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_Titulo2"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_anadirArticulos"
         app:srcCompat="@drawable/movil" />
 
     <TextView

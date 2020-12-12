@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void lanzarListaProductos(){
-        Intent intent = new Intent(MainActivity.this, activity_menu.class);
+        intent = new Intent(MainActivity.this, activity_menu.class);
         intent.putExtra("listaProductos", listaProductos);
         startActivity(intent);
     }
