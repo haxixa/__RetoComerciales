@@ -28,8 +28,9 @@ import java.util.Calendar;
 public class activity_pedido2 extends AppCompatActivity {
 
 
-
+    //info que viene del intent
     Producto[] listaProductos;
+    Partner partner;
 
     Spinner spinnerProductos;
     Pedido pedido;
@@ -58,6 +59,7 @@ public class activity_pedido2 extends AppCompatActivity {
 
         extras = getIntent();
         listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
+        partner = (Partner) extras.getSerializableExtra("partner");
 
         //datos de los spinners
         final ArrayAdapter adapterPoductos = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getListNombres(listaProductos));
@@ -69,9 +71,8 @@ public class activity_pedido2 extends AppCompatActivity {
         String fecha = cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH)+1) + "/" + cal.get(Calendar.YEAR); //mes mal
 
 
-        //Pedido de pruebas
-        pedido = new Pedido(fecha, new Partner("ejemplo", "123", "eweqw", "weq123wa", "622s335568", "joncastas@gmai.clascdo"),
-                new Comercial("1", "s", "123 12", "Gipuzkoa"));
+        //Crear pruebas
+        pedido = new Pedido(fecha, partner, new Comercial("1", "s", "123 12", "Gipuzkoa"));
 
 
         //listener del spinner
