@@ -11,7 +11,7 @@
     <string name="txt_calendario">Calendario</string>
     <string name="txt_gestionPedido">Gestión de pedidos</string>
     <string name="txt_gestionPartners">Gestión de partners</string>
-    <string name="txt_envioCorreo">Email</string>
+    <string name="txt_envioDelegaciones">Envios a Delegaciones</string>
 
     <!-- pedido2 -->
     <string name="lbl_Titulo">Realizar pedido</string>
