@@ -24,16 +24,14 @@ import org.example.retocomerciales.Clases.Partner;
 import org.example.retocomerciales.Clases.Pedido;
 import org.example.retocomerciales.Clases.Producto;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 public class activity_pedido2 extends AppCompatActivity {
 
 
 
     Producto[] listaProductos;
-    String[] list;
 
-    Spinner sp;
+    Spinner spinnerProductos;
     Pedido pedido;
     EditText prUnidad, descripcion, prTotal, unidades;
     ImageView imagen;
@@ -50,7 +48,7 @@ public class activity_pedido2 extends AppCompatActivity {
         setContentView(R.layout.layout_pedido2);
 
         volver  = findViewById(R.id.btn_volver);
-        sp = findViewById(R.id.spinner);
+        spinnerProductos = findViewById(R.id.spinner);
         prUnidad = findViewById(R.id.txt_precioUnidad);
         descripcion = findViewById(R.id.txt_descripcion);
         imagen = findViewById(R.id.imagen);
@@ -58,50 +56,26 @@ public class activity_pedido2 extends AppCompatActivity {
         unidades = findViewById(R.id.txt_cantidades);
         addToPedido = findViewById(R.id.btn_addToPedido);
 
-
-        /*datos cargados sin xml
-        listaProductos = new ArrayList<Producto>();
-        listaProductos.add(new Producto("PPB_", "PistachoB", "movil", 79.95f));
-        listaProductos.add(new Producto("PPA_", "PistachoA", "movil", 125.95f));
-        listaProductos.add(new Producto("PPA+", "PistachoA+", "movil", 153.45f));
-        listaProductos.add(new Producto("PPO_", "PistachoO", "movil", 279.95f));
-        listaProductos.add(new Producto("PPO+", "PistachoO+", "movil", 293.45f));
-        listaProductos.add(new Producto("PPod", "PistachoPods", "airpodsPistacho", 24.95f));
-        listaProductos.add(new Producto("Carg", "Cargador Pistacho", "cargadorPistacho", 12.34f));
-        listaProductos.add(new Producto("FPB_", "Funda PistachoB", "fundaPistacho", 7f));
-        listaProductos.add(new Producto("FPA_", "Funda PistachoA", "fundaPistacho", 7f));
-        listaProductos.add(new Producto("FPA+", "Funda PistachoA+", "fundaPistacho", 8.54f));
-        listaProductos.add(new Producto("FPO_", "Funda PistachoO", "fundaPistacho", 8f));
-        listaProductos.add(new Producto("FPO+", "Funda PistachoO+", "fundaPistacho", 9.54f));*/
         extras = getIntent();
         listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
 
-        list = listaNomProductos(listaProductos);//new String[]{"PistachoB", "PistachoA", "PistachoA+", "PistachoO", "PistachoO+", "PistachoPods", "Cargador Pistacho", "Funda PistachoB", "Funda PistachoA", "Funda PistachoA+", "Funda PistachoO", "Funda PistachoO+"};
+        //datos de los spinners
+        final ArrayAdapter adapterPoductos = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getListNombres(listaProductos));
+        adapterPoductos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerProductos.setAdapter(adapterPoductos);
 
-        final ArrayAdapter lista = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
-
+        //fecha
         Calendar cal = Calendar.getInstance();
         String fecha = cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH)+1) + "/" + cal.get(Calendar.YEAR); //mes mal
 
-        System.err.println("_______________________________");
-        System.err.println("_______________________________");
-        System.err.println("_______________________________");
-        System.err.println("_______________________________");
-        System.err.println("_______________________________");
-        System.err.println("_______________________________");
 
         //Pedido de pruebas
         pedido = new Pedido(fecha, new Partner("ejemplo", "123", "eweqw", "weq123wa", "622s335568", "joncastas@gmai.clascdo"),
                 new Comercial("1", "s", "123 12", "Gipuzkoa"));
 
 
-
-        lista.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        sp.setAdapter(lista);
-
         //listener del spinner
-        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerProductos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -183,7 +157,7 @@ public class activity_pedido2 extends AppCompatActivity {
         }
     }
 
-    public String[] listaNomProductos(Producto[] list){
+    public String[] getListNombres(Producto[] list){
         String[] nombres = new String[list.length];
 
         for(int i = 0; i < list.length; i++){
@@ -207,10 +181,9 @@ public class activity_pedido2 extends AppCompatActivity {
         System.out.println("______________________________________________");
         System.out.println("_______________DATOS DE PEDIDO________________");
         System.out.println("______________________________________________");
-        System.out.println("");
         System.out.println(" - fecha: " + pedido.getFecha());
         System.out.println(" - comercial: " + pedido.getComercial().getNombre() + " " + pedido.getComercial().getApellidos() + " | " + pedido.getComercial().getEmail() + " | " + pedido.getComercial().getDelegacion());
-        System.out.println(" - partner: " +  pedido.getPartner().getCIF() + " " +  pedido.getPartner().getNombre() + " | " +  pedido.getPartner().getEmail() + " | " +  pedido.getPartner().getPoblacion() + " | " +  pedido.getPartner().getTelefono());
+        System.out.println(" - partner: " +  pedido.getPartner().getCIF() + " " +  pedido.getPartner().getNombre() + " | " +  pedido.getPartner().getEmail() + " | " +  pedido.getPartner().getTelefono());
         System.out.println(" - lineas: ");
         for (int i=0; i < pedido.getLineas().size(); i++){
             System.out.println("    * " + pedido.getLinea(i).getProducto().getCod() + " " + pedido.getLinea(i).getProducto().getNombre() + " | "  + pedido.getLinea(i).getCantidad() + " | "  + pedido.getLinea(i).getPr_total());

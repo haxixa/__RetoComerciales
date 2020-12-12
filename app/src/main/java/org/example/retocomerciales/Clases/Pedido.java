@@ -3,9 +3,12 @@
  */
 package org.example.retocomerciales.Clases;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido implements Serializable {
+
+    final static long serialVersionUID = 1l;
     String fecha;
     Partner partner;
     Comercial comercial;

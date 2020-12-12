@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import org.example.retocomerciales.Clases.Partner;
 import org.example.retocomerciales.Clases.Producto;
 
 public class activity_menu extends AppCompatActivity {
@@ -15,7 +16,9 @@ public class activity_menu extends AppCompatActivity {
     ImageButton img_calendario, img_pedidos, img_delegaciones, img_partners;
     Button volver;
     Intent intent, extras;
+    //listas
     Producto[] listaProductos;
+    Partner[] listaPartners;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,7 @@ public class activity_menu extends AppCompatActivity {
 
         extras = getIntent();
         listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
+        listaPartners = (Partner[]) extras.getSerializableExtra("listaPartners");
 
 
         //Lambdas con listeners para cada ImageButton
@@ -53,6 +57,7 @@ public class activity_menu extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(activity_menu.this, activity_pedido1.class);
                 intent.putExtra("listaProductos", listaProductos);
+                intent.putExtra("listaPartners", listaPartners);
                 startActivity(intent);
             }
         });
