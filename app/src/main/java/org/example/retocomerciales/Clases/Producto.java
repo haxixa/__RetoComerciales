@@ -23,6 +23,7 @@ public class Producto implements Serializable {
         this.pr_unidad = pr_unidad;
         this.existencias = 0;
     }
+
     public Producto(String cod, String nombre, String imagen, float pr_unidad, int existencias) {
         this.cod = cod;
         this.nombre = nombre;
@@ -40,6 +41,7 @@ public class Producto implements Serializable {
         this.pr_unidad = pr_unidad;
         this.existencias = 0;
     }
+
     public Producto(String cod, String nombre, String descripcion, String imagen, float pr_unidad, int existencias) {
         this.cod = cod;
         this.nombre = nombre;

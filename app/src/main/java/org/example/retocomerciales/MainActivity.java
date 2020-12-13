@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import org.example.retocomerciales.Clases.Partner;
 import org.example.retocomerciales.Clases.Producto;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Intent intent;
     //ArrayList<Producto> listaProductos;
     Producto[] listaProductos;
+    Partner[] listaPartners;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +42,22 @@ public class MainActivity extends AppCompatActivity {
                 new Producto("FPO_", "Funda PistachoO", "fundaPistacho", 8f),
                 new Producto("FPO+", "Funda PistachoO+", "fundaPistacho", 9.54f)};
 
+        listaPartners = new Partner[]{
+            new Partner("1", "Cebanc", "Berio Pasealekua, 50, 20018 Donostia, Gipuzkoa", "A20045548", "943316900", "contacto@cebanc.com"),
+            new Partner("2", "Ibermática", "Mikeletegi Pasealekua, 5, 20009 Donostia, Gipuzkoa", "A20038915", "943413500", "contacto@ibermatica.com"),
+            new Partner("3", "Dosystem S.L.", "Sagardotegi Kalea, 1, 20160 Lasarte-Oria, SS", "A20040547", "943369533", "contacto@dosystem.com")
+        };
+
         _iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lanzarListaProductos();
+                intent = new Intent(MainActivity.this, activity_menu.class);
+                intent.putExtra("listaProductos", listaProductos);
+                intent.putExtra("listaPartners", listaPartners);
+                startActivity(intent);
             }
         });
     }
 
 
-    public void lanzarListaProductos(){
-        Intent intent = new Intent(MainActivity.this, activity_menu.class);
-        intent.putExtra("listaProductos", listaProductos);
-        startActivity(intent);
-    }
 }

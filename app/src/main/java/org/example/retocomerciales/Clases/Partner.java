@@ -4,24 +4,28 @@
 
 package org.example.retocomerciales.Clases;
 
-public class Partner {
+import java.io.Serializable;
 
-    String nombre, direccion, poblacion, CIF, telefono, email;
+public class Partner implements Serializable {
+
+    final static long serialVersionUID = 1l;
+    String id, nombre, direccion, CIF, telefono, email;
 
     //Constructor
-    public Partner(String nombre, String direccion, String poblacion, String CIF, String telefono, String email) {
+    public Partner(String id, String nombre, String direccion, String CIF, String telefono, String email) {
+        this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.poblacion = poblacion;
         this.CIF = CIF;
         this.telefono = telefono;
         this.email = email;
     }
 
     //Getters
+
+    public String getId() {return id;}
     public String getNombre() {return nombre;}
     public String getDireccion() {return direccion;}
-    public String getPoblacion() {return poblacion;}
     public String getCIF() {return CIF;}
     public String getTelefono() {return telefono;}
     public String getEmail() {return email;}
