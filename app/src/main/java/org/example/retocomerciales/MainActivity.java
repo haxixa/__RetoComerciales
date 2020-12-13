@@ -82,8 +82,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sedeGipuzkoa = new LatLng(43.304949, -2.016798); //Ubicacion mapa
+        LatLng sedeGipuzkoa = new LatLng(43.30492160526047, -2.016846344086027); //Ubicacion mapa
         mMap.addMarker(new MarkerOptions().position(sedeGipuzkoa).title("Sede de Gipuzkoa"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sedeGipuzkoa));
+
+        LatLng partnerSicos = new LatLng(43.32300916986545, -1.9822197474185075);
+        mMap.addMarker(new MarkerOptions().position(partnerSicos).title("Sicos (Partner)"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(partnerSicos));
+
+        LatLng partnerIbermatica = new LatLng(43.28742043250079, -1.9856190798731963);
+        mMap.addMarker(new MarkerOptions().position(partnerIbermatica).title("Ibermatica (Partner)"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(partnerIbermatica));
     }
 }
