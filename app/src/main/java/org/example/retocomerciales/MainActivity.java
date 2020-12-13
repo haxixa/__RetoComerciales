@@ -7,23 +7,40 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.maps.SupportMapFragment;
+
 import org.example.retocomerciales.Clases.Partner;
 import org.example.retocomerciales.Clases.Producto;
 
+import androidx.fragment.app.FragmentActivity;
+
+import android.os.Bundle;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     Button _iniciar;
     Intent intent;
     //ArrayList<Producto> listaProductos;
     Producto[] listaProductos;
     Partner[] listaPartners;
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapa);
+        mapFragment.getMapAsync(this);
 
         _iniciar=findViewById(R.id.btn_iniciar);
 
@@ -60,4 +77,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney and move the camera
+        LatLng sedeGipuzkoa = new LatLng(43.304949, -2.016798); //Ubicacion mapa
+        mMap.addMarker(new MarkerOptions().position(sedeGipuzkoa).title("Sede de Gipuzkoa"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sedeGipuzkoa));
+    }
 }
