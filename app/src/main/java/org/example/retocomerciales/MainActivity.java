@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     Button _iniciar;
     Intent intent;
-    //ArrayList<Producto> listaProductos;
     Producto[] listaProductos;
     Partner[] listaPartners;
     private GoogleMap mMap;
