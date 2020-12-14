@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import org.example.retocomerciales.Clases.Comercial;
@@ -36,7 +37,7 @@ public class activity_pedido2 extends AppCompatActivity {
     Pedido pedido;
     EditText prUnidad, descripcion, prTotal, unidades;
     ImageView imagen;
-    Button addToPedido, volver;
+    Button addToPedido, volver, siguiente;
     Intent intent, extras;
 
     Producto prod;//producto elegido en el spinner
@@ -49,6 +50,7 @@ public class activity_pedido2 extends AppCompatActivity {
         setContentView(R.layout.layout_pedido2);
 
         volver  = findViewById(R.id.btn_volver);
+        siguiente  = findViewById(R.id.btn_siguiente);
         spinnerProductos = findViewById(R.id.spinner);
         prUnidad = findViewById(R.id.txt_precioUnidad);
         descripcion = findViewById(R.id.txt_descripcion);
@@ -114,10 +116,10 @@ public class activity_pedido2 extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     pedido.addLinea(new Linea(prod, Integer.parseInt(unidades.getText().toString())));
-                    System.out.println("CANTIDAD ELEGIDA DPM");
+                    Toast.makeText(getApplicationContext(), "Artículo", Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     //En caso de que no se haya elegido una cantidad
-                    System.out.println("ELIGE LA CANTIDAD PORFA");
+                    Toast.makeText(getApplicationContext(), "Elige cantidad", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -126,6 +128,21 @@ public class activity_pedido2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+
+        siguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pedido.getLineas().size()>0) {
+                    intent = new Intent(activity_pedido2.this, activity_pedido3.class);
+                    intent.putExtra("listaProductos", listaProductos);
+                    intent.putExtra("pedido", pedido);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Añade artículos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
