@@ -4,87 +4,35 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.TextView;
 
-import org.example.retocomerciales.Clases.Partner;
 import org.example.retocomerciales.Clases.Producto;
+
+import java.util.ArrayList;
 
 public class activity_menu extends AppCompatActivity {
 
-    ImageButton img_calendario, img_pedidos, img_delegaciones, img_partners;
-    Button volver;
-    Intent intent, extras;
-    //listas
-    Producto[] listaProductos;
-    Partner[] listaPartners;
+    ArrayList<Producto> listaProductos;
+    TextView lista; //para probar
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_menu);
 
-        //findViewById
-        img_calendario = findViewById(R.id.img_calendario);
-        img_pedidos = findViewById(R.id.img_gestionPedidos);
-        img_delegaciones = findViewById(R.id.img_envioDelegacion);
-        img_partners = findViewById(R.id.img_gestionPartners);
-        volver = findViewById(R.id.btn_volver);
-
-        extras = getIntent();
-        listaProductos = (Producto[]) extras.getSerializableExtra("listaProductos");
-        listaPartners = (Partner[]) extras.getSerializableExtra("listaPartners");
+        Intent extras = getIntent();
+        listaProductos = (ArrayList<Producto>) extras.getSerializableExtra("listaProductos");
 
 
-        //Lambdas con listeners para cada ImageButton
-        volver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        img_calendario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(activity_menu.this, activity_calendario.class);
-                startActivity(intent);
-            }
-        });
-
-        img_pedidos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(activity_menu.this, activity_pedido1.class);
-                intent.putExtra("listaProductos", listaProductos);
-                intent.putExtra("listaPartners", listaPartners);
-                startActivity(intent);
-            }
-        });
-
-        img_delegaciones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(activity_menu.this, activity_envios.class);
-                startActivity(intent);
-            }
-        });
-
-        img_partners.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(activity_menu.this, activity_gestionPartner.class);
-                startActivity(intent);
-            }
-        });
+        lista.setText(texto(listaProductos));
 
     }
 
-    /*public String texto (Producto[] list){//testeo
+    public String texto (ArrayList<Producto> list){
         String text = "";
         for(Producto prod : list){
             text = text + prod.getCod() + "|" + prod.getNombre() + "|" + prod.getDescripcion() + "|" + prod.getPr_unidad() +"\n";
         }
         return  text;
-    }*/
+    }
 }

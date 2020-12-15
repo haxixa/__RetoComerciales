@@ -2,97 +2,97 @@
 	<producto>
 		<articuloID>PPB</articuloID>
 		<nombre>PistachoB</nombre>
-		<descripcion></descripcion>
 		<imagen>movil</imagen>
+		<descripcion></descripcion>
 		<precio>79,95</precio>
-	</producto>
-	
+		<existencias>34</existencias>
+	</producto>	
 	<producto>
 		<articuloID>PPA</articuloID>
-		<nombre>PistachoA</nombre>
-		<descripcion></descripcion>
+		<nombre>PistachoA</nombre>		
 		<imagen>movil</imagen>
+		<descripcion></descripcion>
 		<precio>125.95</precio>
-	</producto>
-	
+		<existencias>23</existencias>
+	</producto>	
 	<producto>
 		<articuloID>PPA+</articuloID>
-		<nombre>PistachoA+</nombre>
-		<descripcion></descripcion>
+		<nombre>PistachoA+</nombre>		
 		<imagen>movil</imagen>
+		<descripcion></descripcion>
 		<precio>153.45</precio>
-	</producto>
-	
+		<existencias>12</existencias>
+	</producto>	
 	<producto>
 		<articuloID>PPO</articuloID>
-		<nombre>PistachoO</nombre>
-		<descripcion></descripcion>
+		<nombre>PistachoO</nombre>		
 		<imagen>movil</imagen>
+		<descripcion></descripcion>
 		<precio>279.95</precio>
-	</producto>
-	
+		<existencias>15</existencias>
+	</producto>	
 	<producto>
 		<articuloID>PPO+</articuloID>
-		<nombre>PistachoO+</nombre>
-		<descripcion></descripcion>
+		<nombre>PistachoO+</nombre>		
 		<imagen>movil</imagen>
+		<descripcion></descripcion>
 		<precio>293.45</precio>
-	</producto>
-	
+		<existencias>56</existencias>
+	</producto>	
 	<producto>
 		<articuloID>PPod</articuloID>
-		<nombre>PistachoPods</nombre>
-		<descripcion></descripcion>
+		<nombre>PistachoPods</nombre>		
 		<imagen>airpodsPistacho</imagen>
+		<descripcion></descripcion>
 		<precio>24.95f</precio>
-	</producto>
-	
+		<existencias>66</existencias>
+	</producto>	
 	<producto>
 		<articuloID>Carg</articuloID>
-		<nombre>Cargador Pistacho</nombre>
-		<descripcion></descripcion>
+		<nombre>Cargador Pistacho</nombre>		
 		<imagen>cargadorPistacho</imagen>
+		<descripcion></descripcion>
 		<precio>12.34</precio>
-	</producto>
-	
+		<existencias>34</existencias>
+	</producto>	
 	<producto>
 		<articuloID>FPB</articuloID>
 		<nombre>Funda PistachoB</nombre>
-		<descripcion></descripcion>
 		<imagen>fundaPistacho</imagen>
+		<descripcion></descripcion>
 		<precio>7</precio>
-	</producto>
-	
+		<existencias>54</existencias>
+	</producto>	
 	<producto>
 		<articuloID>FPA</articuloID>
-		<nombre>Funda PistachoA</nombre>
-		<descripcion></descripcion>
+		<nombre>Funda PistachoA</nombre>		
 		<imagen>fundaPistacho</imagen>
+		<descripcion></descripcion>
 		<precio>7</precio>
-	</producto>
-	
+		<existencias>43</existencias>
+	</producto>	
 	<producto>
 		<articuloID>FPA+</articuloID>
-		<nombre>Funda PistachoA+</nombre>
-		<descripcion></descripcion>
+		<nombre>Funda PistachoA+</nombre>		
 		<imagen>fundaPistacho</imagen>
+		<descripcion></descripcion>
 		<precio>8.54</precio>
-	</producto>	
-	
-	
+		<existencias>23</existencias>
+	</producto>		
 	<producto>
 		<articuloID>FPO</articuloID>
-		<nombre>Funda PistachoO</nombre>
-		<descripcion></descripcion>
+		<nombre>Funda PistachoO</nombre>		
 		<imagen>fundaPistacho</imagen>
+		<descripcion></descripcion>
 		<precio>8</precio>
-	</producto>
-	
+		<existencias>56</existencias>
+	</producto>	
 	<producto>
 		<articuloID>FPO+</articuloID>
-		<nombre>Funda PistachoO+</nombre>
-		<descripcion></descripcion>
+		<nombre>Funda PistachoO+</nombre>		
 		<imagen>fundaPistacho</imagen>
+		<descripcion></descripcion>
 		<precio>9.54</precio>
+		<existencias>44</existencias>
 	</producto>
 </catalogo>
